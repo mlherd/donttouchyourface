@@ -69,15 +69,15 @@ Detailed steps:
     - 4.A: You have to create an AWS account.
     - 4.B: https://aws.amazon.com/polly/
       
- - Step 5- Finally, Create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
-   -5A: Install Anaconda (Optional)
-    - Create a virtual enviroment (Python 3.6) with the following packages installed
-      - OpenCV
-      - Numpy
-      - PyGame (Used it to play audio files
-        - python3 -m pip install -U pygame --user
-   -5B: You can either use the Python wrapper that I created for YOLOv3 and write your own application or use the corona.py as an example.
-    -  https://github.com/mlherd/darknet/tree/python36_wrapper
-    - In order to detect touches, I used rectangle overlap algorithm to check if a hand overlaps with a face.
+  - Step 5- Finally, Create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
+    - 5A: Install Anaconda (Optional)
+      - Create a virtual enviroment (Python 3.6) with the following packages installed
+        - OpenCV
+        - Numpy
+        - PyGame (Used it to play audio files
+          - python3 -m pip install -U pygame --user
+    - 5B: You can either use the Python wrapper that I created for YOLOv3 and write your own application or use the corona.py as an example.
+      -  https://github.com/mlherd/darknet/tree/python36_wrapper
+      - In order to detect touches, I used rectangle overlap algorithm to check if a hand overlaps with a face.
     
 Good luck and stay sterilized!
