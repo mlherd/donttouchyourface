@@ -68,6 +68,8 @@ Detailed steps:
       - PyGame (Used it to play audio files
         - python3 -m pip install -U pygame --user
    -5B: You can either use the Python wrapper that I created for YOLOv3 and write your own application or use the corona.py as an example.
-     -  https://github.com/mlherd/darknet/tree/python36_wrapper
-     - In order to detect touches, I used rectangle overlap algorithm to check if a hand overlaps with a face.
+    -  https://github.com/mlherd/darknet/tree/python36_wrapper
+    - In order to detect touches, I used rectangle overlap algorithm to check if a hand overlaps with a face.
+    
+Good Luck and stay sterilized!
     
