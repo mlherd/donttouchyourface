@@ -18,9 +18,9 @@ A quick summary of what I did:
 
 ![Alt Text](face.png)
 
-Test System:
+My ancient testing system:
 - GPU: Nvidia GTX 1050Ti 4GB
-- CPU : Intel i5-3470
+- CPU: Intel i5-3470
 - RAM: 12GB
 - OS: Ubuntu 18.04
 
@@ -30,7 +30,9 @@ Detailed steps:
   - 1.A: Install cheese to take pictures
     - sudo apt install cheese
   - 1.B: Take pictures of your hands and face
-    - I took 30 hand pictures and 30 face pictures. The more the better!
+    - I took 30 hand pictures and 30 face pictures. Remeber the more the better!
+      - 20 for training and 10 for testing for each class.
+      - You will have all your pictures in one folder, so make sure the dataset is shuffled.
   - 1.C: Label your data set using the labelImg tool
     - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
 
