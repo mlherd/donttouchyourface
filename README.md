@@ -31,31 +31,39 @@ Detailed steps:
     - sudo apt install cheese
   - 1.B: Take pictures of your hands and face
     - I took 30 hand pictures and 30 face pictures. The more the better!
-  - 1.C: Label your data set using labelImg tool
+  - 1.C: Label your data set using the labelImg tool
     - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
 
-- Step 2- Trained a YOLOv3 model using the dataset
+- Step 2- Train a YOLOv3 model using your dataset
   - 2.A: Install Darknet: https://pjreddie.com/darknet/install/
-      - Install CUDA https://developer.nvidia.com/cuda-downloads
-  - 2.B: Download pre-trained model trained on Imagenet datase becasue it is better starting with some pre-trained weigths than starting with random weights.
+      - Also Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
+  - 2.B: Download pre-trained model trained on Imagenet datase becasue it is better starting with some pre-trained weigths than starting with complete random weights.
     - wget https://pjreddie.com/media/files/darknet53.conv.74
   - 2.C: Train a model using your data set: https://pjreddie.com/darknet/yolo/
     - It took about 3 hours to start getting good results.
       - I overcloked my GPU to save time using the Green with Envy tool (Optional)
        - https://gitlab.com/leinardi/gwe
-       - I am not sure how much time it saved me :/ I probably spent more time on learning how to overclock my GPU :)
-    - ./darknet detector train cfg/obj.data cfg/yolov3-voc.cfg darknet53.conv.74
-      - cfg/obj.data: The file tells where to find your dataset, class names and trained models
-      - cfg/yolov3-voc.cfg: YOLO network architecture configuration. 
-        - I had to reduce the batchsize and number of subdivision becasue my GPU has only 4 GB of memery.
-          - batch=16
-          - subdivisions=16
-      - darknet53.conv.74: pre-trained weights
+       - I am not sure how much time overclocking saved me. I probably spent more time on learning how to overclock my GPU :/
+    - Training
+      - ./darknet detector train cfg/obj.data cfg/yolov3-voc.cfg darknet53.conv.74
+        - cfg/obj.data: The file tells where to find your dataset, class names and trained models
+        - cfg/yolov3-voc.cfg: YOLO network architecture configuration. 
+          - I had to reduce the batchsize and number of subdivision becasue my GPU has only 4 GB of memery.
+            - batch=16
+            - subdivisions=16
+        - darknet53.conv.74: pre-trained weights
       
   - Step 3- After 3 hours of training, the model shoudl learn to detect and localize your face and hands in an image
     -3.A: Find the model in /backup
-    -3.B: Test the model
-        
+    -3.B: You will need a web cam for testing.
+    -3.C: Test the model
+      - You can use the YOLO demo to quick test to check how your model is doing.
+      - ./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc_5.backup
+        - yolov3-voc_5.backup: Your model!
+        - cfg/yolov3-voc.cfg: Need to comment the training config lines and uncomment testing config lines. In otherwords, you need to make sure, batch size and subdivisions values are set to 1.
+          - batch=1
+          - subdivisions=1
+          
   - Step 4- Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uplaeded the audio files if you want to skip this part.
     -4.A: You have to create an AWS account.
     -4.B: https://aws.amazon.com/polly/
@@ -72,4 +80,3 @@ Detailed steps:
     - In order to detect touches, I used rectangle overlap algorithm to check if a hand overlaps with a face.
     
 Good Luck and stay sterilized!
-    
