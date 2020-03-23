@@ -3,7 +3,6 @@ import math
 import random
 import cv2
 import numpy as np
-import pyglet
 import time
 from random import randint
 import pygame
@@ -161,8 +160,6 @@ def play_audio():
     global play_time
     i = randint(1, 5)
     name = str(i) + ".mp3"
-    #music = pyglet.resource.media('hand_sound/' + name)
-    #music.play()
     pygame.mixer.music.load('hand_sound/' + name)
     pygame.mixer.music.play()
     play_time = time.time()
@@ -232,8 +229,10 @@ def draw_recs(image, objects, names):
                     if now - play_time > 2.5:
                         play_audio()
             if (hand2_l != None and hand2_r != None):
-                if(overlap(face_l, face_r, hand2_l, hand2_r)): 
-                    play_audio()
+                if(overlap(face_l, face_r, hand2_l, hand2_r)):
+                    now = time.time()
+                    if now - play_time > 2.5:
+                        play_audio()
 
 if __name__ == "__main__":
     net = load_net(b"/home/melih/Desktop/yolo/darknet/cfg/yolov3-voc_inf.cfg", b"/home/melih/Desktop/yolo/darknet/yolov3-voc.backup", 0)
@@ -253,7 +252,7 @@ if __name__ == "__main__":
         if len(r) != 0: 
             npr = np.asarray(r)
             draw_recs(frame, npr[:,2], npr[:,0])
-        cv2.imshow("frame", frame1)
+        cv2.imshow("frame", frame)
         
         key = cv2.waitKey(1)
         if key & 0xFF == ord('q'):
