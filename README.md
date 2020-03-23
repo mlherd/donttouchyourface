@@ -64,10 +64,10 @@ Detailed steps:
         - cfg/yolov3-voc.cfg: Need to comment the training config lines and uncomment testing config lines. In otherwords, you need to make sure, batch size and subdivisions values are set to 1.
           - batch=1
           - subdivisions=1
-          
+
   - Step 4- Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uplaeded the audio files if you want to skip this part.
-    -4.A: You have to create an AWS account.
-    -4.B: https://aws.amazon.com/polly/
+    - 4.A: You have to create an AWS account.
+    - 4.B: https://aws.amazon.com/polly/
       
  - Step 5- Finally, Create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
    -5A: Install Anaconda (Optional)
