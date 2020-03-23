@@ -54,11 +54,10 @@ Detailed steps:
             - batch=16
             - subdivisions=16
         - darknet53.conv.74: pre-trained weights
-      
-  - Step 3- After 3 hours of training, the model shoudl learn to detect and localize your face and hands in an image
-    -3.A: Find the model in /backup
-    -3.B: You will need a web cam for testing.
-    -3.C: Test the model
+  - Step 3- After 3 hours of training, the model shoudl learn to detect and localize your face and hands in an image.
+    - 3.A: Find the model in /backup
+    - 3.B: You will need a web cam for testing.
+    - 3.C: Test the model
       - You can use the YOLO demo to quick test to check how your model is doing.
       - ./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc_5.backup
         - yolov3-voc_5.backup: Your model!
