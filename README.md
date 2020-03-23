@@ -54,29 +54,29 @@ Detailed steps:
             - batch=16
             - subdivisions=16
         - darknet53.conv.74: pre-trained weights
-  - Step 3- After 3 hours of training, the model shoudl learn to detect and localize your face and hands in an image.
-    - 3.A: Find the model in /backup
-    - 3.B: You will need a web cam for testing.
-    - 3.C: Test the model
-      - You can use the YOLO demo to quick test to check how your model is doing.
-      - ./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc_5.backup
-        - yolov3-voc_5.backup: Your model!
-        - cfg/yolov3-voc.cfg: Need to comment the training config lines and uncomment testing config lines. In otherwords, you need to make sure, batch size and subdivisions values are set to 1.
-          - batch=1
-          - subdivisions=1
+- Step 3- After 3 hours of training, the model shoudl learn to detect and localize your face and hands in an image.
+  - 3.A: Find the model in /backup
+  - 3.B: You will need a web cam for testing.
+  - 3.C: Test the model
+    - You can use the YOLO demo to quick test to check how your model is doing.
+    - ./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc_5.backup
+      - yolov3-voc_5.backup: Your model!
+      - cfg/yolov3-voc.cfg: Need to comment the training config lines and uncomment testing config lines. In otherwords, you need to make sure, batch size and subdivisions values are set to 1.
+        - batch=1
+        - subdivisions=1
 
-  - Step 4- Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uplaeded the audio files if you want to skip this part.
-    - 4.A: You have to create an AWS account.
-    - 4.B: https://aws.amazon.com/polly/
-      
-  - Step 5- Finally, Create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
-    - 5A: Install Anaconda (Optional)
-      - Create a virtual enviroment (Python 3.6) with the following packages installed
-        - OpenCV
-        - Numpy
-        - PyGame (Used it to play audio files
-          - python3 -m pip install -U pygame --user
-    - 5B: You can either use the Python wrapper that I created for YOLOv3 and write your own application or use the corona.py as an example.
+- Step 4- Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uplaeded the audio files if you want to skip this part.
+  - 4.A: You have to create an AWS account.
+  - 4.B: https://aws.amazon.com/polly/
+
+- Step 5- Finally, Create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
+  - 5A: Install Anaconda (Optional)
+    - Create a virtual enviroment (Python 3.6) with the following packages installed
+      - OpenCV
+      - Numpy
+      - PyGame (Used it to play audio files
+      - python3 -m pip install -U pygame --use
+  - 5B: You can either use the Python wrapper that I created for YOLOv3 and write your own application or use the corona.py as an example.
       -  https://github.com/mlherd/darknet/tree/python36_wrapper
       - In order to detect touches, I used rectangle overlap algorithm to check if a hand overlaps with a face.
     
