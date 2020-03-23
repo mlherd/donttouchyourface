@@ -1,6 +1,6 @@
 # donttouchyourface
 
-- The things you need to use it
+- The things you need to build your own
 
   - YOLOv3
     - Your own data set to train the model
@@ -80,4 +80,4 @@ Detailed steps:
     -  https://github.com/mlherd/darknet/tree/python36_wrapper
     - In order to detect touches, I used rectangle overlap algorithm to check if a hand overlaps with a face.
     
-Good Luck and stay sterilized!
+Good luck and stay sterilized!
