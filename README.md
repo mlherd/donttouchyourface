@@ -59,10 +59,10 @@ Detailed steps:
   - 3.A: Find the model in /backup
   - 3.B: You will need a webcam for testing.
   - 3.C: Test the model
-    - You can use the YOLO demo to quick test to check how your model is doing.
-    - ./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc_5.backup
-      - yolov3-voc_5.backup: Your model!
-      - cfg/yolov3-voc.cfg: We need to comment on the training config lines and uncomment testing config lines. In other words, you need to make sure, the batch size and the number of subdivision values are set to 1.
+    - You can use the YOLO demo to quick test the accuracy of your model.
+    - ./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc.backup
+      - yolov3-voc.backup: Your model
+      - cfg/yolov3-voc_inf.cfg: We need to comment on the training config lines and uncomment testing config lines. In other words, you need to make sure, the batch size and the number of subdivision values are set to 1.
         - batch=1
         - subdivisions=1
 
