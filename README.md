@@ -1,6 +1,6 @@
 # donttouchyourface
 
-- The things you need to build your own
+### The things you need to build your own
 
   - YOLOv3
     - Your data set to train the model
@@ -8,7 +8,7 @@
   - PyGame
   - Camera
 
-A quick summary of what I did:
+### A quick summary of what I did
 
 - Step 1- Created a small dataset which contains images of my face and hands
 - Step 2- Trained a YOLOv3 model using the dataset
@@ -18,15 +18,19 @@ A quick summary of what I did:
 
 ![Alt Text](face.png)
 
-My ancient testing system:
+**Link to the Project Video:** https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6647733944861159424?compact=1
+
+### My ancient test system
 - GPU: Nvidia GTX 1050Ti 4GB
 - CPU: Intel i5-3470
 - RAM: 12GB
 - OS: Ubuntu 18.04
 
-Detailed steps:
+---
 
-- Step 1- Create a small dataset which contains images of your face and hands
+### Detailed steps
+
+**- Step 1-** Create a small dataset which contains images of your face and hands
   - 1.A: Install cheese to take pictures
     - sudo apt install cheese
   - 1.B: Take pictures of your hands and face
@@ -36,7 +40,7 @@ Detailed steps:
   - 1.C: Label your data set using the labelImg tool
     - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
 
-- Step 2- Train a YOLOv3 model using your dataset
+**- Step 2-** Train a YOLOv3 model using your dataset
   - 2.A: Install Darknet: https://pjreddie.com/darknet/install/
       - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
   - 2.B: Download the pre-trained model (darknet53.conv.74) which is trained on Imagenet dataset because it is better to begin with some pre-trained weights than complete random weights.
@@ -55,7 +59,7 @@ Detailed steps:
             - subdivisions=16
         - darknet53.conv.74: pre-trained weights
         
-- Step 3- After 3 hours of training, the model should learn to detect and localize your face and hands in an image.
+**- Step 3-** After 3 hours of training, the model should learn to detect and localize your face and hands in an image.
   - 3.A: Find the model in /backup
   - 3.B: You will need a webcam for testing.
   - 3.C: Test the model
@@ -66,11 +70,11 @@ Detailed steps:
         - batch=1
         - subdivisions=1
 
-- Step 4- Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uploaded the audio files that I created if you want to skip this part.
+**- Step 4-** Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uploaded the audio files that I created if you want to skip this part.
   - 4.A: You have to create an AWS account.
   - 4.B: https://aws.amazon.com/polly/
 
-- Step 5- Finally, create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
+**- Step 5-** Finally, create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
   - 5A: Install Anaconda (Optional)
     - Create a virtual environment (Python 3.6) with the following packages installed
       - OpenCV
@@ -81,4 +85,4 @@ Detailed steps:
       -  https://github.com/mlherd/darknet/tree/python36_wrapper
       - To detect touches, I used the rectangle overlap algorithm to check if a hand overlaps with a face.
     
-Good luck and stay sterilized!
+## Good luck and stay sterilized!
