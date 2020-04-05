@@ -40,6 +40,8 @@
   - 1.C: Label your data set using the labelImg tool
     - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
 
+![Alt Text](label_data.gif)
+
 **- Step 2-** Train a YOLOv3 model using your dataset
   - 2.A: Install Darknet: https://pjreddie.com/darknet/install/
       - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
