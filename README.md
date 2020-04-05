@@ -70,7 +70,7 @@
        - https://gitlab.com/leinardi/gwe
        - I am not sure how much time overclocking saved me. I probably spent more time on learning how to overclock my GPU :/
     - Training
-      - '''./darknet detector train cfg/obj.data cfg/yolov3-voc.cfg darknet53.conv.74'''
+      - ```./darknet detector train cfg/obj.data cfg/yolov3-voc.cfg darknet53.conv.74```
         - cfg/obj.data: The file tells where to find your dataset, class names and trained models
         - cfg/yolov3-voc.cfg: YOLO network architecture configuration. 
           - I had to reduce the batch size and the number of subdivisions because my GPU has only 4 GB of memory.
