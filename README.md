@@ -31,13 +31,21 @@
 ### Detailed steps
 
 **- Step 1-** Create a small dataset which contains images of your face and hands
-  - 1.A: Install cheese to take pictures
+  - 1.A: Create new directory called ```dataset```.
+    - ```mkdir dataset```
+    - ```cd dataset```
+    - Create new .txt file called ```classes.txt```
+    - Open classes.txt with a text editor and type the following class names in a new line:
+      - face
+      - hand
+     - Save the file. We will use this file dataset labeling process.
+  - 1.B: Install cheese to take pictures
     - sudo apt install cheese
-  - 1.B: Take pictures of your hands and face
+  - 1.C: Take pictures of your hands and face
     - I took 30 hand pictures and 30 face pictures. Remember the more the better!
       - 20 for training and 10 for testing for each class.
       - You will have all your pictures in one folder, so make sure the dataset is shuffled.
-  - 1.C: Label your data set using the labelImg tool
+  - 1.D: Label your data set using the labelImg tool
     - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
     - Follow their instruction to install labelImg then run:
     - ```python3 labelImg.py /home/melih/Desktop/dataset /home/melih/Desktop/dataset/classes.txt```
