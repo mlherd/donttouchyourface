@@ -46,14 +46,14 @@
   - 2.A: Install Darknet: https://pjreddie.com/darknet/install/
       - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
   - 2.B: Download the pre-trained model (darknet53.conv.74) which is trained on Imagenet dataset because it is better to begin with some pre-trained weights than complete random weights.
-    - wget https://pjreddie.com/media/files/darknet53.conv.74
+    - ```wget https://pjreddie.com/media/files/darknet53.conv.74```
   - 2.C: Train a model using your data set: https://pjreddie.com/darknet/yolo/
     - It took about 3 hours to start getting good results.
       - I overclocked my GPU to save time using the Green with Envy tool (Optional)
        - https://gitlab.com/leinardi/gwe
        - I am not sure how much time overclocking saved me. I probably spent more time on learning how to overclock my GPU :/
     - Training
-      - ./darknet detector train cfg/obj.data cfg/yolov3-voc.cfg darknet53.conv.74
+      - '''./darknet detector train cfg/obj.data cfg/yolov3-voc.cfg darknet53.conv.74'''
         - cfg/obj.data: The file tells where to find your dataset, class names and trained models
         - cfg/yolov3-voc.cfg: YOLO network architecture configuration. 
           - I had to reduce the batch size and the number of subdivisions because my GPU has only 4 GB of memory.
@@ -66,7 +66,7 @@
   - 3.B: You will need a webcam for testing.
   - 3.C: Test the model
     - You can use the YOLO demo to quick test the accuracy of your model.
-    - ./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc.backup
+    - ```./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc.backup```
       - yolov3-voc.backup: Your model
       - cfg/yolov3-voc_inf.cfg: We need to comment on the training config lines and uncomment testing config lines. In other words, you need to make sure, the batch size and the number of subdivision values are set to 1.
         - batch=1
