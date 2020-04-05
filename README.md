@@ -53,9 +53,9 @@
     - ```python3 labelImg.py /home/melih/Desktop/dataset /home/melih/Desktop/dataset/classes.txt```
     - Click on the ```Change Save Dir``` button and choose your dataset directory. Because, we want our images and their labels to be in the same directory.
     - The default save format is ``Pascal/VOC``, so change it to ``YOLO``.
-    - press on ```W``` to draw a rectangle in the image to label.
-    - select the class type
-    - save the image and go to the next image.
+    - Press on ```W``` to draw a rectangle in the image to label.
+    - Select the class type
+    - Save the image and go to the next image.
     - Repeat this process for all the images in the dataset.
 
     ![Alt Text](label_data.gif)
