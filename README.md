@@ -107,5 +107,9 @@
   - 5B: You can either use the Python wrapper that I created for YOLOv3 and write your own application or use the corona.py as an example.
       -  https://github.com/mlherd/darknet/tree/python36_wrapper
       - To detect touches, I used the rectangle overlap algorithm to check if a hand overlaps with a face.
-    
+      
+## Final Result:
+
+  ![Alt Text](final.gif)
+        
 ## Good luck and stay sterilized!
