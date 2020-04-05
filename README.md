@@ -39,6 +39,14 @@
       - You will have all your pictures in one folder, so make sure the dataset is shuffled.
   - 1.C: Label your data set using the labelImg tool
     - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
+    - Follow their instruction to install labelImg then run:
+    - ```python3 labelImg.py /home/melih/Desktop/dataset /home/melih/Desktop/dataset/classes.txt```
+    - Click on the ```Change Save Dir``` button and choose your dataset directory. Because, we want our images and their labels to be in the same directory.
+    - The default save format is ``Pascal/VOC``, so change it to ``YOLO``.
+    - press on ```W``` to draw a rectangle in the image to label.
+    - select the class type
+    - save the image and go to the next image.
+    - Repeat this process for all the images in the dataset.
 
 ![Alt Text](label_data.gif)
 
