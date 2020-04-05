@@ -58,19 +58,22 @@
     - save the image and go to the next image.
     - Repeat this process for all the images in the dataset.
 
-![Alt Text](label_data.gif)
+    ![Alt Text](label_data.gif)
 
 **- Step 2-** Train a YOLOv3 model using your dataset
-  - 2.A: Install Darknet: https://pjreddie.com/darknet/install/
-      - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
-  - 2.B: Download the pre-trained model (darknet53.conv.74) which is trained on Imagenet dataset because it is better to begin with some pre-trained weights than complete random weights.
+  - **2.A: Install Darknet:**
+    - https://pjreddie.com/darknet/install/
+    - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
+  - **2.B: Download the pre-trained model (darknet53.conv.74)**
+    - darknet53.conv.74 is trained on Imagenet dataset. We want to use because it is better to begin with some pre-trained weights than complete random weights.
     - ```wget https://pjreddie.com/media/files/darknet53.conv.74```
-  - 2.C: Train a model using your data set: https://pjreddie.com/darknet/yolo/
+  - **2.C: Train a model using your data set**
+    - You can follow the YOLO training instruction at https://pjreddie.com/darknet/yolo/. Also, I explain what you need to do to train your network in the next step as well.
     - It took about 3 hours to start getting good results.
       - I overclocked my GPU to save time using the Green with Envy tool (Optional)
        - https://gitlab.com/leinardi/gwe
-       - I am not sure how much time overclocking saved me. I probably spent more time on learning how to overclock my GPU :/
-    - Training
+       - I am not sure how much time overclocking actually saves me. I probably spent more time on figuring out how to overclock my GPU :/
+    - Training YOLO in details:
       - ```./darknet detector train cfg/obj.data cfg/yolov3-voc.cfg darknet53.conv.74```
         - cfg/obj.data: The file tells where to find your dataset, class names and trained models
         - cfg/yolov3-voc.cfg: YOLO network architecture configuration. 
