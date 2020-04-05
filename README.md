@@ -34,8 +34,9 @@
   - 1.A: Create new directory called ```dataset```.
     - ```mkdir dataset```
     - ```cd dataset```
-    - Create new .txt file called ```classes.txt```
-    - Open classes.txt with a text editor and type the following class names in a new line:
+    - Create a new .txt file called ```classes.txt```
+    - Open classes.txt with your favorite text editor such as nano and gedit etc
+    - Type the following class names in a new line:
       - face
       - hand
      - Save the file. We will use this file dataset labeling process.
