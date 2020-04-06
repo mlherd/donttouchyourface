@@ -57,7 +57,7 @@ A Machine Learning application that verbally warns the user if they touch their 
       - You will have all your pictures in one folder, so make sure the dataset is shuffled.
       
       - Example image dataset:
-      <img src="dataset_imgs.png" alt="" width="500">
+      <img src="dataset_imgs.png" alt="" width="520">
       
   - **1.D: Label your data set using the labelImg tool**
     - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
@@ -72,6 +72,9 @@ A Machine Learning application that verbally warns the user if they touch their 
 
     ![Alt Text](label_data.gif)
 
+     - Example image dataset with labels:
+     <img src="labeled_dataset.png" alt="" width="520">
+     
 **- Step 2-** Train a YOLOv3 model using your dataset
   - **2.A: Install Darknet:**
     - https://pjreddie.com/darknet/install/
