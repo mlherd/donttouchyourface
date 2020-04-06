@@ -73,7 +73,7 @@ A Machine Learning application that verbally warns the user if they touch their 
     ![Alt Text](label_data.gif)
 
      - Example image dataset with labels:
-     <img src="labeled_dataset.png" alt="" width="520">
+     <img src="labeled_dataset.png" alt="" width="640">
      
 **- Step 2-** Train a YOLOv3 model using your dataset
   - **2.A: Install Darknet:**
