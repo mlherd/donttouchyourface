@@ -38,7 +38,7 @@ A Machine Learning application that verbally warns the user if they touch their 
 
 ### Detailed steps
 
-**- Step 1-** Create a small dataset which contains images of your face and hands.
+### Step 1- Create a small dataset which contains images of your face and hands
    - **1.A: Setup dataset directory and class name files**
      - Create new directory called ```dataset```
      - ```mkdir dataset```
@@ -75,7 +75,7 @@ A Machine Learning application that verbally warns the user if they touch their 
      - Example image dataset with labels:
      <img src="labeled_dataset.png" alt="" width="640">
      
-**- Step 2-** Train a YOLOv3 model using your dataset
+### Step 2- Train a YOLOv3 model using your dataset
   - **2.A: Install Darknet:**
     - https://pjreddie.com/darknet/install/
     - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
@@ -97,7 +97,7 @@ A Machine Learning application that verbally warns the user if they touch their 
             - subdivisions=16
         - darknet53.conv.74: pre-trained weights
         
-**- Step 3-** After 3 hours of training, the model should learn to detect and localize your face and hands in an image.
+### Step 3- After 3 hours of training, the model should learn to detect and localize your face and hands in an image.
   - 3.A: Find the model in /backup
   - 3.B: You will need a webcam for testing.
   - 3.C: Test the model
@@ -108,11 +108,11 @@ A Machine Learning application that verbally warns the user if they touch their 
           - batch=1
           - subdivisions=1
 
-**- Step 4-** Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uploaded the audio files that I created if you want to skip this part.
+### Step 4- Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uploaded the audio files that I created if you want to skip this part.
   - 4.A: You have to create an AWS account.
   - 4.B: https://aws.amazon.com/polly/
 
-**- Step 5-** Finally, create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
+### Step 5- Finally, create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
   - 5A: Install Anaconda (Optional)
     - Create a virtual environment (Python 3.6) with the following packages installed
       - OpenCV
