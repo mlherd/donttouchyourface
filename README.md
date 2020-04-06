@@ -88,7 +88,8 @@ A Machine Learning application that verbally warns the user if they touch their 
            - OPENMP=0
            - DEBUG=0
            - NUMPY=1
-        - ```make```
+        - After editing Makefile type:
+          - ```make```
     
     - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
   - **2.B: Download the pre-trained model (darknet53.conv.74)**
