@@ -70,7 +70,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
     - Save the image and go to the next image.
     - Repeat this process for all the images in the dataset.
 
-    ![Alt Text](label_data.gif)
+     ![Alt Text](label_data.gif)
 
      - Example image dataset with labels:
      <img src="labeled_dataset.png" alt="" width="640">
@@ -86,7 +86,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
          - This text file stores the training image locations. Create a text file and save testing image locations.
          
         - Example train.txt and test.txt files:
-        <img src="test_train.png" alt="" width="720">
+      <img src="test_train.png" alt="" width="720">
      
 ### Step 2- Train a YOLOv3 model using your dataset
   
