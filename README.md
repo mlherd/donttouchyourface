@@ -58,7 +58,7 @@ A Machine Learning application that verbally warns the user if they touch their 
   - **1.D: Label your data set using the labelImg tool**
     - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
     - Follow their instruction to install labelImg then run:
-    - ```python3 labelImg.py /home/melih/Desktop/dataset /home/melih/Desktop/dataset/classes.txt```
+      - ```python3 labelImg.py /home/melih/Desktop/dataset /home/melih/Desktop/dataset/classes.txt```
     - Click on the ```Change Save Dir``` button and choose your dataset directory. Because, we want our images and their labels to be in the same directory.
     - The default save format is ``Pascal/VOC``, so change it to ``YOLO``.
     - Press on ```W``` to draw a rectangle in the image to label.
@@ -74,7 +74,7 @@ A Machine Learning application that verbally warns the user if they touch their 
     - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
   - **2.B: Download the pre-trained model (darknet53.conv.74)**
     - darknet53.conv.74 is trained on Imagenet dataset. We want to use because it is better to begin with some pre-trained weights than complete random weights.
-    - ```wget https://pjreddie.com/media/files/darknet53.conv.74```
+      - ```wget https://pjreddie.com/media/files/darknet53.conv.74```
   - **2.C: Train a model using your data set**
     - You can follow the YOLO training instruction at https://pjreddie.com/darknet/yolo/. Also, I explain what you need to do to train your network in the next step as well.
     - It took about 3 hours to start getting good results.
@@ -95,11 +95,11 @@ A Machine Learning application that verbally warns the user if they touch their 
   - 3.B: You will need a webcam for testing.
   - 3.C: Test the model
     - You can use the YOLO demo to quick test the accuracy of your model.
-    - ```./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc.backup```
-      - yolov3-voc.backup: Your model
-      - cfg/yolov3-voc_inf.cfg: We need to comment on the training config lines and uncomment testing config lines. In other words, you need to make sure, the batch size and the number of subdivision values are set to 1.
-        - batch=1
-        - subdivisions=1
+      - ```./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc.backup```
+        - yolov3-voc.backup: Your model
+        - cfg/yolov3-voc_inf.cfg: We need to comment on the training config lines and uncomment testing config lines. In other words, you need to make sure, the batch size and the number of subdivision values are set to 1.
+          - batch=1
+          - subdivisions=1
 
 **- Step 4-** Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uploaded the audio files that I created if you want to skip this part.
   - 4.A: You have to create an AWS account.
