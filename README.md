@@ -2,10 +2,16 @@
 
 ### The things you need to build your own
 
-  - YOLOv3
-    - Your data set to train the model
-  - OpenCV
+  - CUDA (Optional)
+    - Used during the training process to save time
+  - YOLOv3 
+    - Used for realtime object detection
+  - Your data set to train the model
+    - At least 60 pictures (30 pictures for face and 30 pictures for hand)
+  - OpenCV 
+    - Used for capturing images from webcam and image processing
   - PyGame
+    - Used for playing sound files 
   - Camera
 
 ### A quick summary of what I did
