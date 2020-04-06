@@ -40,7 +40,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
 
 ### Step 1- Create a small dataset which contains images of your face and hands
    - **1.A: Setup dataset directory and class name files**
-     - Create new directory called ```dataset```
+     - Create a new directory called ```dataset```
      - ```mkdir dataset```
      - ```cd dataset```
      - Create a new .txt file called ```classes.txt```
@@ -53,19 +53,19 @@ Donttouchyourface is a simple machine learning application that verbally warns t
     - ```sudo apt install cheese```
   - **1.C: Take pictures of your hands and face**
     - I took 30 hand pictures and 30 face pictures. Remember the more the better!
-      - 20 for training and 10 for testing for each class.
+      - 25 for training and 5 for testing for each class.
       - You will have all your pictures in one folder, so make sure the dataset is shuffled.
       
       - Example image dataset:
       <img src="dataset_imgs.png" alt="" width="520">
       
   - **1.D: Label your data set using the labelImg tool**
-    - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
+    - There are several different tools that you can use to complete this step. I used https://github.com/tzutalin/labelImg
     - Follow their instruction to install labelImg then run:
       - ```python3 labelImg.py /home/melih/Desktop/dataset /home/melih/Desktop/dataset/classes.txt```
     - Click on the ```Change Save Dir``` button and choose your dataset directory. Because, we want our images and their labels to be in the same directory.
     - The default save format is ``Pascal/VOC``, so change it to ``YOLO``.
-    - Press on ```W``` to draw a rectangle in the image to label.
+    - Press on ```w``` to draw a rectangle in the image to label.
     - Select the class type
     - Save the image and go to the next image.
     - Repeat this process for all the images in the dataset.
@@ -74,6 +74,19 @@ Donttouchyourface is a simple machine learning application that verbally warns t
 
      - Example image dataset with labels:
      <img src="labeled_dataset.png" alt="" width="640">
+     
+   - **1.E: Selecting Training and Testing Data**
+     - This the final step in dataset preparation
+     - YOLO looks for three differen files in the dataset directory.
+       - classes.names
+         - This is a copy of the classes.txt that we have created earlier. It just has a differen name, so you can copy-paste classes.txt and chance its name to classes.names
+       - train.txt
+         - This text file stores the training image locations. Create a text file and save training image locations.
+       - test.txt
+         - This text file stores the training image locations. Create a text file and save testing image locations.
+         
+        - Example train.txt and test.txt files:
+        <img src="test_train.png" alt="" width="720">
      
 ### Step 2- Train a YOLOv3 model using your dataset
   
