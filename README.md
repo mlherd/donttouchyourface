@@ -77,7 +77,19 @@ A Machine Learning application that verbally warns the user if they touch their 
      
 ### Step 2- Train a YOLOv3 model using your dataset
   - **2.A: Install Darknet:**
-    - https://pjreddie.com/darknet/install/
+    - Follow the instructions here or below: https://pjreddie.com/darknet/install/
+      - Download Darknet
+        - ```git clone https://github.com/pjreddie/darknet.git```
+        - ```cd darknet```
+        - Before start building anything, you need to edit the Makefile for OpenCV and want to use GPU. Make sure you have the followinf lines in the Makefile.
+           - GPU=1
+           - CUDNN=0
+           - OPENCV=1
+           - OPENMP=0
+           - DEBUG=0
+           - NUMPY=1
+        - ```make```
+    
     - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
   - **2.B: Download the pre-trained model (darknet53.conv.74)**
     - darknet53.conv.74 is trained on Imagenet dataset. We want to use because it is better to begin with some pre-trained weights than complete random weights.
