@@ -83,12 +83,14 @@ A Machine Learning application that verbally warns the user if they touch their 
         - ```git clone https://github.com/pjreddie/darknet.git```
         - ```cd darknet```
         - Before start building anything, you need to edit the Makefile for OpenCV and want to use GPU (You need to install CUDA first. See the next step). Make sure you have the followinf lines in the Makefile.
+           ```
            - GPU=1
            - CUDNN=0
            - OPENCV=1
            - OPENMP=0
            - DEBUG=0
            - NUMPY=1
+           ```
         - After editing Makefile type:
           - ```make```
     
