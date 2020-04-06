@@ -76,12 +76,13 @@ A Machine Learning application that verbally warns the user if they touch their 
      <img src="labeled_dataset.png" alt="" width="640">
      
 ### Step 2- Train a YOLOv3 model using your dataset
+  
   - **2.A: Install Darknet:**
     - Follow the instructions here or below: https://pjreddie.com/darknet/install/
       - Download Darknet
         - ```git clone https://github.com/pjreddie/darknet.git```
         - ```cd darknet```
-        - Before start building anything, you need to edit the Makefile for OpenCV and want to use GPU. Make sure you have the followinf lines in the Makefile.
+        - Before start building anything, you need to edit the Makefile for OpenCV and want to use GPU (You need to install CUDA first. See the next step). Make sure you have the followinf lines in the Makefile.
            - GPU=1
            - CUDNN=0
            - OPENCV=1
@@ -91,10 +92,14 @@ A Machine Learning application that verbally warns the user if they touch their 
         - After editing Makefile type:
           - ```make```
     
-    - Also, Install CUDA https://developer.nvidia.com/cuda-downloads. Trust me, you want to use an Nvidia GPU with CUDA to do this.
+    - How to install CUDA -> https://developer.nvidia.com/cuda-downloads
+      - You can test the installation and see your CUDA version by typing:
+        - ```nvcc --version```
+    
   - **2.B: Download the pre-trained model (darknet53.conv.74)**
     - darknet53.conv.74 is trained on Imagenet dataset. We want to use because it is better to begin with some pre-trained weights than complete random weights.
       - ```wget https://pjreddie.com/media/files/darknet53.conv.74```
+      
   - **2.C: Train a model using your data set**
     - You can follow the YOLO training instruction at https://pjreddie.com/darknet/yolo/. Also, I explain what you need to do to train your network in the next step as well.
     - It took about 3 hours to start getting good results.
@@ -111,7 +116,7 @@ A Machine Learning application that verbally warns the user if they touch their 
         - darknet53.conv.74: pre-trained weights
         
 ### Step 3- After 3 hours of training, the model should learn to detect and localize your face and hands in an image.
-  - 3.A: Find the model in /backup
+  - 3.A: Find the model in ```/backup```
   - 3.B: You will need a webcam for testing.
   - 3.C: Test the model
     - You can use the YOLO demo to quick test the accuracy of your model.
