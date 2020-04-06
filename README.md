@@ -95,7 +95,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
       - Download Darknet
         - ```git clone https://github.com/pjreddie/darknet.git```
         - ```cd darknet```
-        - Before start building anything, you need to edit the Makefile for OpenCV and want to use GPU (You need to install CUDA first. See the next step). Make sure you have the followinf lines in the Makefile.
+        - Before start building anything, you need to edit the Makefile for OpenCV and if choose to use GPU (You need to install CUDA first. See the next step). Make sure you have the following lines in the Makefile.
            ```
            - GPU=1
            - CUDNN=0
