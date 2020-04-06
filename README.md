@@ -91,7 +91,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
 ### Step 2- Train a YOLOv3 model using your dataset
   
   - **2.A: Install Darknet:**
-    - Follow the instructions here or below: https://pjreddie.com/darknet/install/
+    - Follow the instructions at the link or below: https://pjreddie.com/darknet/install/
       - Download Darknet
         - ```git clone https://github.com/pjreddie/darknet.git```
         - ```cd darknet```
