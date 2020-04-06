@@ -6,7 +6,7 @@
     - Used during the training process to save time
   - YOLOv3 
     - Used for realtime object detection
-  - Your data set to train the model
+  - Your data set to train and test the model
     - At least 60 pictures (30 pictures for face and 30 pictures for hand)
   - OpenCV 
     - Used for capturing images from webcam and image processing
