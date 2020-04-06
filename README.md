@@ -1,6 +1,6 @@
 # donttouchyourface
 
-A Machine Learning application that verbally warns the user if they touch their face
+Donttouchyourface is a simple machine learning application that verbally warns the user if they touch their face.
 
 ### The things you need to build your own
 
