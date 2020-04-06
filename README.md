@@ -50,11 +50,15 @@ A Machine Learning application that verbally warns the user if they touch their 
         - hand
       - Save the file. We will use this file dataset labeling process.
   - **1.B: Install cheese to take pictures**
-    - sudo apt install cheese
+    - ```sudo apt install cheese```
   - **1.C: Take pictures of your hands and face**
     - I took 30 hand pictures and 30 face pictures. Remember the more the better!
       - 20 for training and 10 for testing for each class.
       - You will have all your pictures in one folder, so make sure the dataset is shuffled.
+      
+      - Example image dataset:
+      <img src="dataset_imgs.png" alt="" width="500">
+      
   - **1.D: Label your data set using the labelImg tool**
     - There are several different tools to do this step. I used https://github.com/tzutalin/labelImg
     - Follow their instruction to install labelImg then run:
