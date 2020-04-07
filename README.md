@@ -143,9 +143,9 @@ Donttouchyourface is a simple machine learning application that verbally warns t
         
 ### Step 3- Test the trained model
   - After 3 hours of training, the model should learn to detect and localize your face and hands in an image.
-  - 3.A: Find the model in ```/backup```
-  - 3.B: You will need a webcam for testing.
-  - 3.C: Test the model
+  - **3.A** Find the model in ```/backup```
+  - **3.B** You will need a webcam for testing. Connect your USB webcam to your computer if you are using one.
+  - **3.C** Test the model
     - You can use the YOLO demo to quickly test the accuracy of your model.
       - ```./darknet detector demo cfg/custom.data cfg/yolov3-voc_inf.cfg yolov3-voc.backup```
         - yolov3-voc.backup: Your model
@@ -155,29 +155,28 @@ Donttouchyourface is a simple machine learning application that verbally warns t
 
 ### Step 4- Create audio files to play
    - Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uploaded the audio files that I created if you want to skip this part.
-  - 4.A: You have to create an AWS account.
-  - 4.B: https://aws.amazon.com/polly/
-  - 4.C: Alternatively, you can record your voice or use any other audio file as well. Just make sure that the audio file format is supported by Pygame library. (Optional)
+  - **4.A** You have to create an AWS account.
+  - **4.B** https://aws.amazon.com/polly/
+  - **4.C** Alternatively, you can record your voice or use any other audio file as well. Just make sure that the audio file format is supported by Pygame library. (Optional)
 
 ### Step 5- Create a Python script
   - Finally, we need to create a Python script that captures images from the web webcam uses the pre-trained model for inference and warns us if our hands get too close to my face
-  - 5A: Install Anaconda (Optional)
+  - **5A** Install Anaconda (Optional)
     - Create a virtual environment (Python 3.6) with the following packages installed
       - OpenCV
       - Numpy
       - PyGame (Used it to play audio files
       - python3 -m pip install -U pygame --use
-  - 5B: You can either use the Python wrapper that I created for YOLOv3 and write your application or use the corona.py as an example.
-      -  https://github.com/mlherd/darknet/tree/python36_wrapper
-      
-        - This probably is the most tricky part of this tutorial.
-        - If you decide to use my version of darkent.py, first you should check out the changes I did in the darknet repo.
-          - In the Makefile, you need to use the right path to the numpy installation directory.
+  - **5B** You can either use the Python wrapper that I created for YOLOv3 and write your application or use the corona.py as an example.
+      -  `https://github.com/mlherd/darknet/tree/python36_wrapper`
+      - This probably is the most tricky part of this tutorial. If you decide to use my version of darkent.py, first you should check out the changes I did in the darknet repo. 
+      - In the Makefile, you need to use the right path to the numpy installation directory.
           - After these changes are done, you need to rebuild YOLO.
+            ```
             - cd darknet
             - make clean
             - make
-            
+            ```
       - Now you should be able to run corona.py. To detect touches, I used the rectangle overlap algorithm to check if a hand overlaps with a face.
       
 ## Final Result:
