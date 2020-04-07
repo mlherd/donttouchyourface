@@ -24,7 +24,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
 - Step 4- Used the AWS Polly speech synthesis tool to create a few funny audio files to warn my self
 - Step 5- Finally, I created a Python script that captures images from my webcam, uses the pre-trained model for inference and warns me if my hand gets too close to my face
 
-![Alt Text](face.png)
+![Alt Text](docs/images/face.png)
 
 **Link to the Project Video:** https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6647733944861159424?compact=1
 
@@ -57,7 +57,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
       - You will have all your pictures in one folder, so make sure the dataset is shuffled.
       
       - Example image dataset:
-      <img src="dataset_imgs.png" alt="" width="520">
+      <img src="docs/images/dataset_imgs.png" alt="" width="520">
       
   - **1.D: Label your data set using the labelImg tool**
     - There are several different tools that you can use to complete this step. I used https://github.com/tzutalin/labelImg
@@ -70,10 +70,10 @@ Donttouchyourface is a simple machine learning application that verbally warns t
     - Save the image and go to the next image.
     - Repeat this process for all the images in the dataset.
 
-     ![Alt Text](label_data.gif)
+     ![Alt Text](docs/images/label_data.gif)
 
      - Example image dataset with labels:
-     <img src="labeled_dataset.png" alt="" width="640">
+     <img src="docs/images/labeled_dataset.png" alt="" width="640">
      
    - **1.E: Selecting Training and Testing Data**
      - This the final step in dataset preparation
@@ -86,7 +86,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
          - This text file stores the training image locations. Create a text file and save testing image locations.
          
         - Example train.txt and test.txt files:
-      <img src="test_train.png" alt="" width="720">
+      <img src="docs/images/test_train.png" alt="" width="720">
      
 ### Step 2- Train a YOLOv3 model using your dataset
   
@@ -182,6 +182,6 @@ Donttouchyourface is a simple machine learning application that verbally warns t
       
 ## Final Result:
 
-  ![Alt Text](final.gif)
+  ![Alt Text](docs/images/final.gif)
         
 ## Good luck and stay sterilized!
