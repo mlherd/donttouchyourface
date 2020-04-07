@@ -165,8 +165,10 @@ Donttouchyourface is a simple machine learning application that verbally warns t
     - Create a virtual environment (Python 3.6) with the following packages installed
       - OpenCV
       - Numpy
-      - PyGame (Used it to play audio files
-      - python3 -m pip install -U pygame --use
+      - PyGame (I used it for playing audio files)
+        - ```conda install -c cogsci pygame```
+        - or
+        - ```python3 -m pip install -U pygame --use```
   - **5B** You can either use the Python wrapper that I created for YOLOv3 and write your application or use the corona.py as an example.
       -  `https://github.com/mlherd/darknet/tree/python36_wrapper`
       - This probably is the most tricky part of this tutorial. If you decide to use my version of darkent.py, first you should check out the changes I did in the darknet repo. 
