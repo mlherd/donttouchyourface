@@ -7,7 +7,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
   - CUDA (Optional)
     - Used during the training process to save time
   - YOLOv3 
-    - Used for realtime object detection
+    - Used for real-time object detection
   - Your data set to train and test the model
     - At least 60 pictures (30 pictures for face and 30 pictures for hand)
   - OpenCV 
@@ -63,7 +63,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
     - There are several different tools that you can use to complete this step. I used https://github.com/tzutalin/labelImg
     - Follow their instruction to install labelImg then run:
       - ```python3 labelImg.py /home/melih/Desktop/dataset /home/melih/Desktop/dataset/classes.txt```
-    - Click on the ```Change Save Dir``` button and choose your dataset directory. Because, we want our images and their labels to be in the same directory.
+    - Click on the ```Change Save Dir``` button and choose your dataset directory. Because we want our images and their labels to be in the same directory.
     - The default save format is ``Pascal/VOC``, so change it to ``YOLO``.
     - Press on ```w``` to draw a rectangle in the image to label.
     - Select the class type
@@ -77,9 +77,9 @@ Donttouchyourface is a simple machine learning application that verbally warns t
      
    - **1.E: Selecting Training and Testing Data**
      - This the final step in dataset preparation
-     - YOLO looks for three differen files in the dataset directory.
+     - YOLO looks for three different files in the dataset directory.
        - classes.names
-         - This is a copy of the classes.txt that we have created earlier. It just has a differen name, so you can copy-paste classes.txt and chance its name to classes.names
+         - This is a copy of the classes.txt that we have created earlier. It just has a different name, so you can copy-paste classes.txt and change its name to classes.names
        - train.txt
          - This text file stores the training image locations. Create a text file and save training image locations.
        - test.txt
@@ -112,7 +112,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
         - ```nvcc --version```
  
   - **2.B: Share information about our custom dataset with YOLO**
-    - We need to tell YOLO how many number of classes and class names, where to find our custom datasets and where to save models. To do that, you need to create a configuration file. You can use ```custom.data``` file as an example, but you have to change the paths unlees your use name is melih and your data set is located in Desktop :). You need to have the following lines in this file.
+    - We need to tell YOLO how many numbers of classes and class names, where to find our custom datasets and where to save models. To do that, you need to create a configuration file. You can use ```custom.data``` file as an example, but you have to change the paths unless your user name is melih and your data set is located in Desktop :). You need to have the following lines in this file.
     
     ```
     - classes= 2
@@ -123,7 +123,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
     ````
     
   - **2.C: Download the pre-trained model (darknet53.conv.74)**
-    - darknet53.conv.74 is trained on Imagenet dataset. We want to use because it is better to begin with some pre-trained weights than complete random weights.
+    - darknet53.conv.74 is trained on Imagenet dataset. We want to use it because it is better to begin with some pre-trained weights than complete random weights.
       - ```wget https://pjreddie.com/media/files/darknet53.conv.74```
       
   - **2.D: Train a model using your data set**
@@ -141,32 +141,36 @@ Donttouchyourface is a simple machine learning application that verbally warns t
             - subdivisions=16
         - darknet53.conv.74: pre-trained weights
         
-### Step 3- After 3 hours of training, the model should learn to detect and localize your face and hands in an image.
+### Step 3- Test the trained model
+  - After 3 hours of training, the model should learn to detect and localize your face and hands in an image.
   - 3.A: Find the model in ```/backup```
   - 3.B: You will need a webcam for testing.
   - 3.C: Test the model
-    - You can use the YOLO demo to quick test the accuracy of your model.
-      - ```./darknet detector demo cfg/obj.data cfg/yolov3-voc_inf.cfg yolov3-voc.backup```
+    - You can use the YOLO demo to quickly test the accuracy of your model.
+      - ```./darknet detector demo cfg/custom.data cfg/yolov3-voc_inf.cfg yolov3-voc.backup```
         - yolov3-voc.backup: Your model
         - cfg/yolov3-voc_inf.cfg: We need to comment on the training config lines and uncomment testing config lines. In other words, you need to make sure, the batch size and the number of subdivision values are set to 1.
           - batch=1
           - subdivisions=1
 
-### Step 4- Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uploaded the audio files that I created if you want to skip this part.
+### Step 4- Create audio files to play
+   - Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uploaded the audio files that I created if you want to skip this part.
   - 4.A: You have to create an AWS account.
   - 4.B: https://aws.amazon.com/polly/
+  - 4.C: Alternatively, You can record your voice or use any other audio file as well (Optional)
 
-### Step 5- Finally, create a Python script that captures images from my webcam uses the pre-trained model for inference and warns me if my hand gets too close to my face
+### Step 5- Create a Python script
+  - Finally, we need to create a Python script that captures images from the web webcam uses the pre-trained model for inference and warns us if our hands get too close to my face
   - 5A: Install Anaconda (Optional)
     - Create a virtual environment (Python 3.6) with the following packages installed
       - OpenCV
       - Numpy
       - PyGame (Used it to play audio files
       - python3 -m pip install -U pygame --use
-  - 5B: You can either use the Python wrapper that I created for YOLOv3 and write your own application or use the corona.py as an example.
+  - 5B: You can either use the Python wrapper that I created for YOLOv3 and write your application or use the corona.py as an example.
       -  https://github.com/mlherd/darknet/tree/python36_wrapper
         - This probably is the most tricky part of this tutorial.
-        - If you decide to use my version of darkent.py, first you should check the changes I did in the darnet repo.
+        - If you decide to use my version of darkent.py, first you should check the changes I did in the darknet repo.
           - In the Makefile, you need to use the right path to the numpy installation directory.
           - After these changes, you need to rebuild YOLO.
             ```
