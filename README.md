@@ -174,12 +174,10 @@ Donttouchyourface is a simple machine learning application that verbally warns t
         - If you decide to use my version of darkent.py, first you should check out the changes I did in the darknet repo.
           - In the Makefile, you need to use the right path to the numpy installation directory.
           - After these changes are done, you need to rebuild YOLO.
-          
-            ```
             - cd darknet
             - make clean
             - make
-            ```
+            
       - Now you should be able to run corona.py. To detect touches, I used the rectangle overlap algorithm to check if a hand overlaps with a face.
       
 ## Final Result:
