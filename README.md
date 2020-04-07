@@ -110,20 +110,31 @@ Donttouchyourface is a simple machine learning application that verbally warns t
     - How to install CUDA -> https://developer.nvidia.com/cuda-downloads
       - You can test the installation and see your CUDA version by typing:
         - ```nvcc --version```
+ 
+  - **2.B: Share information about our custom dataset with YOLO**
+    - We need to tell YOLO how many number of classes and class names, where to find our custom datasets and where to save models. To do that, you need to create a configuration file. You can use ```custom.data``` file as an example, but you have to change the paths unlees your use name is melih and your data set is located in Desktop :). You need to have the following lines in this file.
     
-  - **2.B: Download the pre-trained model (darknet53.conv.74)**
+    ```
+    - classes= 2
+    - train = /home/melih/Desktop/dataset/train.txt
+    - valid = /home/melih/Desktop/dataset/test.txt
+    - names = /home/melih/Desktop/dataset/classes.names
+    - backup = /home/melih/Desktop/backup
+    ````
+    
+  - **2.C: Download the pre-trained model (darknet53.conv.74)**
     - darknet53.conv.74 is trained on Imagenet dataset. We want to use because it is better to begin with some pre-trained weights than complete random weights.
       - ```wget https://pjreddie.com/media/files/darknet53.conv.74```
       
-  - **2.C: Train a model using your data set**
+  - **2.D: Train a model using your data set**
     - You can follow the YOLO training instruction at https://pjreddie.com/darknet/yolo/. Also, I explain what you need to do to train your network in the next step as well.
     - It took about 3 hours to start getting good results.
       - I overclocked my GPU to save time using the Green with Envy tool (Optional)
        - https://gitlab.com/leinardi/gwe
        - I am not sure how much time overclocking actually saves me. I probably spent more time on figuring out how to overclock my GPU :/
     - Training YOLO in details:
-      - ```./darknet detector train cfg/obj.data cfg/yolov3-voc.cfg darknet53.conv.74```
-        - cfg/obj.data: The file tells where to find your dataset, class names and trained models
+      - ```./darknet detector train cfg/custom.data cfg/yolov3-voc.cfg darknet53.conv.74```
+        - cfg/custom.data: The file tells where to find your dataset, class names and trained models
         - cfg/yolov3-voc.cfg: YOLO network architecture configuration. 
           - I had to reduce the batch size and the number of subdivisions because my GPU has only 4 GB of memory.
             - batch=16
@@ -154,6 +165,15 @@ Donttouchyourface is a simple machine learning application that verbally warns t
       - python3 -m pip install -U pygame --use
   - 5B: You can either use the Python wrapper that I created for YOLOv3 and write your own application or use the corona.py as an example.
       -  https://github.com/mlherd/darknet/tree/python36_wrapper
+        - This probably is the most tricky part of this tutorial.
+        - If you decide to use my version of darkent.py, first you should check the changes I did in the darnet repo.
+          - In the Makefile, you need to use the right path to the numpy installation directory.
+          - After these changes, you need to rebuild YOLO.
+            ```
+            - cd darknet
+            - make clean
+            - make
+            ```
       - To detect touches, I used the rectangle overlap algorithm to check if a hand overlaps with a face.
       
 ## Final Result:
