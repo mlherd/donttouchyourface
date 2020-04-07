@@ -1,0 +1,5 @@
+classes= 2
+train = /home/melih/Desktop/dataset/train.txt
+valid = /home/melih/Desktop/dataset/test.txt
+names = /home/melih/Desktop/dataset/classes.names
+backup = /home/melih/Desktop/backup
