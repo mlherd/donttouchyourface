@@ -54,7 +54,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
   - **1.C: Take pictures of your hands and face**
     - I took 30 hand pictures and 30 face pictures. Remember the more the better!
       - 25 for training and 5 for testing for each class.
-      - You will have all your pictures in one folder, so make sure the dataset is shuffled.
+      - You will need keep all your pictures in one folder, so make sure the dataset is shuffled. You can do it when selecting training and testing images in step 1E.
       
       - Example image dataset:
       <img src="docs/images/dataset_imgs.png" alt="" width="520">
