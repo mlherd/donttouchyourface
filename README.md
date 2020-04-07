@@ -112,7 +112,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
         - ```nvcc --version```
  
   - **2.B: Share information about our custom dataset with YOLO**
-    - We need to tell YOLO how many numbers of classes and class names, where to find our custom datasets and where to save models. To do that, you need to create a configuration file. You can use ```custom.data``` file as an example, but you have to change the paths unless your user name is melih and your data set is located in Desktop :). You need to have the following lines in this file.
+    - We need to tell YOLO some information about our custom dataset such as how many numbers of classes and class names, where to find our custom datasets and where to save models. To do that, you need to create data file. You can use ```custom.data``` file as an example, but you have to change the paths unless your user name is melih and your data set is located in Desktop :). You need to have the following lines in this file.
     
     ```
     - classes= 2
@@ -157,7 +157,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
    - Use the AWS Polly speech synthesis tool to create a few funny audio files to warn my self. I uploaded the audio files that I created if you want to skip this part.
   - 4.A: You have to create an AWS account.
   - 4.B: https://aws.amazon.com/polly/
-  - 4.C: Alternatively, You can record your voice or use any other audio file as well (Optional)
+  - 4.C: Alternatively, you can record your voice or use any other audio file as well. Just make sure that the audio file format is supported by Pygame library. (Optional)
 
 ### Step 5- Create a Python script
   - Finally, we need to create a Python script that captures images from the web webcam uses the pre-trained model for inference and warns us if our hands get too close to my face
