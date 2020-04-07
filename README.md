@@ -173,6 +173,7 @@ Donttouchyourface is a simple machine learning application that verbally warns t
         - If you decide to use my version of darkent.py, first you should check the changes I did in the darknet repo.
           - In the Makefile, you need to use the right path to the numpy installation directory.
           - After these changes, you need to rebuild YOLO.
+          
             ```
             - cd darknet
             - make clean
